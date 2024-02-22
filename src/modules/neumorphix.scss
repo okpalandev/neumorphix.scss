@@ -1,0 +1,33 @@
+@use "../tools/_neu.scss" as *;
+
+$neu-light: #fcfcfc;
+$neu-dark: #3e3e3e;
+$neu-shadow-light: #ffffff;
+$neu-shadow-dark: #2a2a2a;
+$neu-radius: 10px;
+
+
+$neumorphix-colors: (
+    light: $neu-light,
+    dark: $neu-dark,
+    shadow-light: $neu-shadow-light,
+    shadow-dark: $neu-shadow-dark
+);
+
+
+@each $neu-color in (light, dark) {
+    .neu-#{$neu-color} {
+        background-color: map-get($neumorphix-colors, $neu-color); 
+        @include apply-scale-transform(0);
+        @include neu($neu-color);
+    }
+}
+
+@each $neu-color in (shadow-light, shadow-dark) {
+    .neu-#{$neu-color} {
+        background-color: map-get($neumorphix-colors, $neu-color); 
+        @include apply-scale-transform(0);
+        @include neu-shadow($neu-color);
+    }
+}
+
