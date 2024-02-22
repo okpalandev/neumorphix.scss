@@ -1,5 +1,5 @@
 {
-  "name": "neumorphix",
+  "name": "neumorphix.scss",
   "version": "0.1.0",
   "description": "A standalone neumorphism CSS/SCSS framework.",
   "main": "src/styles.scss",
@@ -12,7 +12,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sass src/styles.scss dist/neumorphix.css",
-    "watch": "sass --watch src/styles.scss dist/neumorphix.css"
+    "watch": "sass --watch src/styles.scss dist/neumorphix.css",
+    "postinstall": "npm run build"
+
   },
   "keywords": [
     "neu",
@@ -23,7 +25,7 @@
   "devDependencies": {
     "sass": "^1.71.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "browser-sync": "^3.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0"
